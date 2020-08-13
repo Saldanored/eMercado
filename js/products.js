@@ -1,9 +1,29 @@
-var categoriesArray = [];
-function showCategoriesList(array){
+function showProductsList(array){
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
         let product = array[i];
+        
+        
+        htmlContentToAppend += `
+        <div class="col-sm-4" style="padding: 0.5rem;">
+            <div class="card shadow-sm custom-card border rounded h-100">
+                <img src="${product.imgSrc}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="text-muted">` + product.cost + `  ` + product.currency +  `</p>
+                    </div>
 
+                    <p class="card-text text-muted text-justify">${product.description}</p>
+                    <small class="text-muted">${product.soldCount} productos vendidos</small>
+                </div>
+                <a href="#" class="btn btn-primary">Ver artículo</a>
+            </div>
+        </div>
+        `
+
+        
+/*
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
@@ -20,6 +40,7 @@ function showCategoriesList(array){
             </div>
         </div>
         `
+*/
 
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
@@ -34,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         {
             productsArray = resultObj.data;
             //Muestro las categorías ordenadas
-            showCategoriesList(productsArray);
+            showProductsList(productsArray);
         }
     });
 });
