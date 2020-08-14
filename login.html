@@ -19,7 +19,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
-
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="576771394452-nme5tr0rmrtulqohprvt4tgf79bd1kd5.apps.googleusercontent.com">
 
     <title>eMercado - Todo lo que busques está aquí</title>
 </head>
@@ -78,10 +79,22 @@
         <label class="form-check-label" for="exampleCheck1">Recordáme</label>
       </div>
       <button id="loginButton" type="submit" class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
+      <div class="g-signin2 pt-2" data-onsuccess="onSignIn"></div>
     </form>
+    
   </div>
 
 
+
+  <script>
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+  </script>
 
 
   <script src="js/init.js"></script>
