@@ -4,3 +4,6 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+function fakeLogin(){
+    sessionStorage.setItem('key', 'accessoPermitido'); 
+  }
