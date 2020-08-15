@@ -18,6 +18,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="576771394452-qppnsf39naorgmtvub96big8sd9m8gfn.apps.googleusercontent.com">
+
     <title>eMercado - Todo lo que busques está aquí</title>
 </head>
 <body>
@@ -71,9 +74,9 @@
       </div>
       <button id="loginButton" type="submit" class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
       <p class="text-center">o</p> 
-
+      <div class="g-signin2" data-width="340px" data-onsuccess="onSignIn"></div>
     </form>
-    
+
   </div>
 
 
