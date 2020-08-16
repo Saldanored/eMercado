@@ -17,9 +17,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <!-- GOOGLE QAUTH-->
     <meta name="google-signin-client_id" content="576771394452-qppnsf39naorgmtvub96big8sd9m8gfn.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <title>eMercado - Todo lo que busques está aquí</title>
 </head>
@@ -30,6 +31,13 @@
       -ms-flex-align: center;
       align-items: center;
       background-color: #f5f5f5;
+    }
+
+    form{
+      max-width: 360px;
+    }
+    #googleQauth{
+      text-align: center;
     }
 /*
     body {
@@ -48,40 +56,54 @@
 </head>
 <body>
 
-  <div class="container-fluid d-flex justify-content-center  align-items-center">
+  <div class="container-fluid d-flex justify-content-center  align-items-center pb-0">
    <img src="img/logo.png" alt="">
   </div>
-  <div class="container-fluid d-flex justify-content-center  align-items-center">
-    <form  action="index.html" id="loginForm" onsubmit="fakeLogin()" class="p-3 rounded">
+  <div class="container d-flex justify-content-center  align-items-center mb-0">
+    <form  action="index.html"  id="loginForm" onsubmit="fakeLogin()" class="p-3 rounded">
       <div class="form-group">
-        <h2 class="font-weight-light">Bienvenido a E-mercado</h2>
+        <h2 class="font-weight-light text-center">Bienvenido a E-mercado</h2>
         <h4 class="text-center text-muted font-weight-light">Inicio de sesión</h4>
       </div>
       <div class="form-group ">
         <label for="emailInput">Email</label>
         <input type="email" placeholder="Correo electrónico" class="form-control" id="emailInput"
           aria-describedby="emailHelp" required>
+          <small class="text-danger" id="emailError"></small>
         <small id="emailHelp" class="form-text text-muted">No compartiremos tu email con nadie.</small>
       </div>
-  
+       
       <div class="form-group ">
-        <label for="password">Contraseña</label>
-        <input type="password" placeholder="Contraseña" class="form-control" id="password" required>
+        <label for="passwordInput">Contraseña</label>
+        <input type="password" pattern=".{8,}"   required title="8 characters minimum" placeholder="Contraseña" class="form-control" id="passwordInput" required>
+        <small class="text-danger" id="passError"></small>
+        <small id="passHelp" class="form-text text-muted">Longitud de contraseña: como mínimo 8 caracteres.</small>
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="rememberMe">
         <label class="form-check-label" for="rememberMe">Recordáme</label>
       </div>
-      <button id="loginButton" type="submit" class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
-      <p class="text-center">o</p> 
-      <div class="g-signin2" data-width="340px" data-onsuccess="onSignIn"></div>
+      <button id="loginButton" type="submit" onclick="checkValidationErrors()" class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
+      <p class="text-center mb-0">o</p> 
     </form>
-
   </div>
 
+  <div class="container d-flex justify-content-center  align-items-center mt-0">
+    <div  id="googleQauth"class="g-signin2 mb-3" data-width="325px" data-onsuccess="onSignIn"></div>
+  </div>
 
-
-
+  <!--
+  <script>
+    function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    sessionStorage.setItem('key', 'accessoPermitido'); 
+    window.location.href="index.html";
+  }
+  </script>-->
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>

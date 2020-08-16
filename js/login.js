@@ -5,16 +5,42 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 });
 
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  sessionStorage.setItem('key', 'accessoPermitido'); 
-  window.location.href="index.html";
-}
 
 function fakeLogin(){
     sessionStorage.setItem('key', 'accessoPermitido'); 
   }
+
+function checkValidationErrors() {
+  var inpEmailObj = document.getElementById("emailInput");
+  if (!inpEmailObj.checkValidity()) {
+    document.getElementById("emailError").innerHTML = inpEmailObj.validationMessage;
+  } else {
+    document.getElementById("emailError").innerHTML = "";
+  } 
+  var inpPassObj = document.getElementById("passwordInput");
+  if (!inpPassObj.checkValidity()) {
+    document.getElementById("passError").innerHTML = inpPassObj.validationMessage;
+  } else {
+    document.getElementById("passError").innerHTML = "";
+  } 
+} 
+
+$('input, select, textarea').on("invalid", function(e) {
+  e.preventDefault();
+});
+
+function onSignIn(googleUser) {
+  // Useful data for your client-side scripts:
+  var profile = googleUser.getBasicProfile();
+  console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+  console.log('Full Name: ' + profile.getName());
+  console.log('Given Name: ' + profile.getGivenName());
+  console.log('Family Name: ' + profile.getFamilyName());
+  console.log("Image URL: " + profile.getImageUrl());
+  console.log("Email: " + profile.getEmail());
+  sessionStorage.setItem('key', 'accessoPermitido'); 
+  window.location.href="index.html";
+  // The ID token you need to pass to your backend:
+  var id_token = googleUser.getAuthResponse().id_token;
+  console.log("ID Token: " + id_token);
+}
