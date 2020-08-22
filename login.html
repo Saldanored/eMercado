@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
 <head>
@@ -10,8 +9,10 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <!-- CSS only -->
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
 
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -22,88 +23,61 @@
     <meta name="google-signin-client_id" content="576771394452-qppnsf39naorgmtvub96big8sd9m8gfn.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
     <title>eMercado - Todo lo que busques está aquí</title>
 </head>
+
 <body>
-  <style>
-    html, body{
-      height: 100%;
-      -ms-flex-align: center;
-      align-items: center;
-      background-color: #f5f5f5;
-    }
+  
+  <div class="container">
+    <div class="row align-items-center  bg-light border border-rounded">
 
-    form{
-      max-width: 360px;
-    }
-    #googleQauth{
-      text-align: center;
-    }
-/*
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-*/
+      <!-- COVER PAGE -->
+      <div class="container col-sm-6 bg-light justify-content-center p-5 border-dark">
+        <img class="img-fluid mx-auto d-block" style="max-width: 300px;" src="img/undraw_shopping_app_flsj.svg" alt="">
+        <h2 class="text-center mt-3 font-weight-bold">E-mercado</h2>
+        <h5 class="text-center text-muted font-weight-light">Todo lo que busques está aquí</h5>
+        <p class="text-center font-weight-normal px-2">Lorem ipsum dolor sit quibusdam porro veritatis! Quidem soluta
+          alias velit vitae assumenda ipsam officiis unde beatae distinctio nemo?</p>
+      </div>
 
-  </style>
-
-</head>
-<body>
-
-  <div class="container-fluid d-flex justify-content-center  align-items-center pb-0">
-   <img src="img/logo.png" alt="">
-  </div>
-  <div class="container d-flex justify-content-center  align-items-center mb-0">
-    <form  action="index.html"  id="loginForm" onsubmit="fakeLogin()" class="p-3 rounded">
-      <div class="form-group">
-        <h2 class="font-weight-light text-center">Bienvenido a E-mercado</h2>
-        <h4 class="text-center text-muted font-weight-light">Inicio de sesión</h4>
+      <!-- LOGIN PAGE -->
+      <div class="container col-sm-6 bg-light border-left border-secondary p-2">
+        <div class="d-flex justify-content-center">
+          <form action="index.html" id="loginForm" onsubmit="fakeLogin()" class="p-2 rounded">
+            <div class="form-group">
+              <h2 class="font-weight-bold text-center">Bienvenido a E-mercado</h2>
+              <h5 class="text-center text-muted font-weight-light">Inicio de sesión</h5>
+            </div>
+            <div class="form-group ">
+              <label for="nameInput">Nombre de Usuario</label>
+              <input type="text" placeholder="Usuario" class="form-control" id="nameInput" aria-describedby="emailHelp"
+                required>
+              <small class="text-danger" id="nameError"></small>
+              <small id="emailHelp" class="form-text text-muted">Longitud de usuario: 8 caracteres mínimo.</small>
+            </div>
+  
+            <div class="form-group ">
+              <label for="passwordInput">Contraseña</label>
+              <input type="password" pattern=".{8,}" required title="8 characters minimum" placeholder="Contraseña"
+                class="form-control" id="passwordInput" required>
+              <small class="text-danger" id="passError"></small>
+              <small id="passHelp" class="form-text text-muted">Longitud de contraseña: 8 caracteres mínimo.</small>
+            </div>
+            <button id="loginButton" type="submit" onclick="checkValidationErrors()"
+              class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
+            <p class="text-center mb-0">o</p>
+          </form>
+        </div>
+        <div class="container d-flex justify-content-center  align-items-center mt-0">
+          <div id="googleQauth" class="g-signin2 mb-3" data-width="340px" data-theme="dark" data-onsuccess="onSignIn">
+          </div>
+        </div>
       </div>
-      <div class="form-group ">
-        <label for="emailInput">Email</label>
-        <input type="email" placeholder="Correo electrónico" class="form-control" id="emailInput"
-          aria-describedby="emailHelp" required>
-          <small class="text-danger" id="emailError"></small>
-        <small id="emailHelp" class="form-text text-muted">No compartiremos tu email con nadie.</small>
-      </div>
-       
-      <div class="form-group ">
-        <label for="passwordInput">Contraseña</label>
-        <input type="password" pattern=".{8,}"   required title="8 characters minimum" placeholder="Contraseña" class="form-control" id="passwordInput" required>
-        <small class="text-danger" id="passError"></small>
-        <small id="passHelp" class="form-text text-muted">Longitud de contraseña: como mínimo 8 caracteres.</small>
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="rememberMe">
-        <label class="form-check-label" for="rememberMe">Recordáme</label>
-      </div>
-      <button id="loginButton" type="submit" onclick="checkValidationErrors()" class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
-      <p class="text-center mb-0">o</p> 
-    </form>
+    </div>
   </div>
 
-  <div class="container d-flex justify-content-center  align-items-center mt-0">
-    <div  id="googleQauth"class="g-signin2 mb-3" data-width="325px" data-onsuccess="onSignIn"></div>
-  </div>
-
-  <!--
-  <script>
-    function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    sessionStorage.setItem('key', 'accessoPermitido'); 
-    window.location.href="index.html";
-  }
-  </script>-->
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
