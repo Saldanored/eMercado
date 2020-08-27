@@ -2,7 +2,8 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  if(sessionStorage.getItem('key')){
+  if(localStorage.getItem('key')){
+    alert("Se encontró el valor key accessopermitido")
     window.location.href = "index.html";
   }
 });
@@ -36,7 +37,7 @@ function checkValidationErrors() {
 } 
 
 function fakeLogin(){
-  sessionStorage.setItem('key', 'accessoPermitido'); 
+  localStorage.setItem('key', 'accessoPermitido'); 
   localStorage.setItem('nombreUsuario', document.getElementById("nameInput").value)
 
 }
