@@ -144,3 +144,7 @@ a.custom-card:hover {
 .navbar-nav li{
   margin-right: 1.5rem;
 }
+
+.primaryBackground{
+  background-color: #52026f;
+}

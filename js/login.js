@@ -3,9 +3,8 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   if(localStorage.getItem('key')){
-    alert("Se encontró el valor key accessopermitido")
     window.location.href = "index.html";
-  }
+  } 
 });
 
 $('input, select, textarea').on("invalid", function(e) {
@@ -52,7 +51,7 @@ function onSignIn(googleUser) {
   console.log("Image URL: " + profile.getImageUrl());
   console.log("Email: " + profile.getEmail());
   localStorage.setItem('nombreUsuario', profile.getName());
-  sessionStorage.setItem('key', 'accessoPermitido'); 
+  localStorage.setItem('key', 'accessoPermitido'); 
   window.location.href="index.html";
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
