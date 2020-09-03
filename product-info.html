@@ -16,24 +16,125 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+  <style>
+  .preview{
+    max-width: 100%;
+    object-fit: cover;
+    height: 120px;
+  }
+
+  #centralImage{
+    max-width: 100%;
+    object-fit: cover;
+    height: 360px;
+  }
+
+  .boxShadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  </style>
+
+  <!-- NAVBAR -->
+  <nav class="px-5 navbar navbar-expand-lg bg-light navbar-light sticky-top">
+    <a class="navbar-link text-dark font-weight-bold" href="#">e-Mercado</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link " href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link primary-color font-weight-bold" href="products.html">Productos<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+        <div class="d-flex align-items-center">
+         <!--- <i class="fas fa-user mr-1"></i>-->     
+          <div class="dropdown">
+            <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold" type="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Aldo Fermin
+            </button>
+            <div class="dropdown-menu" aria-labelledby="profile">
+              <a class="dropdown-item" href="cart.html">Mi perfil</a>
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
+              <a class="dropdown-item" href="#">Cerrar Sesión</a><!-- EN CONSTRUCCION-->
+            </div>
+          </div>
+        </div>
+      </ul>
     </div>
-  </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  </nav>   
+  <!-- BREADCRUMB -->
+  <div class="container-fluid " >
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-white" style="font-size: 13px;">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="products.html">Productos</a></li>
+        <li class="breadcrumb-item"><a href="products.html">Autos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chevrolet Onix Joy</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="container mb-4">
+    <div class="row ">
+      <!--CENTRAL IMG CONTAINER -->
+      <div class="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center bg-dark align-items-center p-0">
+        <div class="d-flex justify-content-center align-items-center">
+          <img id="centralImage" src="" class="w-100" alt="Responsive image">
+        </div>    
+        <!-- <div class="row" >
+          <div class="col-12 text-white d-flex align-items-center "    id="previewImageContainer" ></div>
+        </div>
+     -->
+      </div>
+
+
+      <!-- DESCRIPTION CONTAINER -->
+      <div class="col-sm-12 col-md-12 col-lg-6 p-4 d-flex align-items-center boxShadow p-4">
+        <div>
+          <div class="d-flex justify-content-between ">
+            <h3>CHEVROLET ONIX JOY</h3>
+            <h5>13500 USD</h5>
+          </div>
+          
+          <div class="d-flex mt-2" id="descriptionDiv">
+            <p><b>Descripción breve: </b> Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.</p>
+          </div>    
+          <div class="d-flex justify-content-between mt-2">
+            <small class="font-weight-light ">Categoría: Autos</small >
+            <small class="font-weight-light">Productos vendidos: 5200</small >
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- IMAGE THUMBNAILS-->
+    <div class="row " >
+      <div class="col-12 text-white d-flex align-items-center p-1 bg-dark "    id="previewImageContainer" ></div>
     </div>
   </div>
-  <footer class="text-muted">
+
+  <!-- REVIEWS -->
+  <div class="container mt-2">
+    <h2 class="mx-4">Valoraciones</h2>
+  </div>
+  <div class="container" id="reviewContainer">
+  </div>
+  <!-- FOOTER -->
+  <footer class="text-muted mt-2">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>

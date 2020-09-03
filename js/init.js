@@ -40,6 +40,10 @@ var getJSONData = function(url){
     });
 }
 
+
+var logout = function(){
+  localStorage.setItem('key', 'accesoDenegado');
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -49,18 +53,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     window.location.href = "login.html"
   }
 
-  /*
-  let linkActual = window.location.href;
-  if (!linkActual.includes('login.html') && !sessionStorage.getItem('key')) {
-      window.location.href = "login.html"*/
-  
-/*
-  document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between").innerHtml = <a class="py-2 d-none d-md-inline-block" href="cart.html">+ +</a>
-*/
+
   if (localStorage.getItem('nombreUsuario') ) {
     document.getElementById("profile").innerText = localStorage.getItem('nombreUsuario');
-  } /*else{
-    document.getElementById("profile").innerText = "Anonymous";
-  }*/
-
+  } 
 });

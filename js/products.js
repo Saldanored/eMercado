@@ -111,7 +111,7 @@ function showProductsList(){
                         <p class="card-text text-muted text-justify">${product.description}</p>
                         <small class="text-muted">${product.soldCount} productos vendidos</small>
                     </div>
-                    <a href="#" class="btn text-white" style="background-color: #52026f;">Ver artículo</a>
+                    <a href="product-info.html" class="btn text-white" style="background-color: #52026f;">Ver artículo</a>
                 </div>
             </div>
             `
@@ -147,7 +147,7 @@ function showProductsList1(array){
                             <p class="card-text text-muted text-justify">${product.description}</p>
                             <small class="text-muted">${product.soldCount} productos vendidos</small>
                         </div>
-                        <a href="#" class="btn text-white" style="background-color: #52026f;">Ver artículo</a>
+                        <a href="product-info.html" class="btn text-white" style="background-color: #52026f;">Ver artículo</a>
                     </div>
                 </div>
                 `
