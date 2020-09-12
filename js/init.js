@@ -7,15 +7,15 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
-var showSpinner = function(){
+let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
-var hideSpinner = function(){
+let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-var getJSONData = function(url){
+let getJSONData = function(url){
     var result = {};
     showSpinner();
     return fetch(url)
@@ -41,8 +41,15 @@ var getJSONData = function(url){
 }
 
 
-var logout = function(){
-  localStorage.setItem('key', 'accesoDenegado');
+let logout = function(){
+  localStorage.clear();
+  window.location.href = 'login.html';
+  gapi.auth2.getAuthInstance().signOut().then(function () {
+    location.reload();
+  });
+
+
+
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -57,4 +64,5 @@ document.addEventListener("DOMContentLoaded", function(e){
   if (localStorage.getItem('nombreUsuario') ) {
     document.getElementById("profile").innerText = localStorage.getItem('nombreUsuario');
   } 
+
 });

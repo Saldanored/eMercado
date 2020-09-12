@@ -146,5 +146,45 @@ a.custom-card:hover {
 }
 
 .primaryBackground{
+  background-color: #6e218a;
+}
+
+.primaryBackground{
+  background-color: #ca3097;
+}
+.primaryBackground{
   background-color: #52026f;
+}
+.primaryTextColor{
+  color: #52026f;
+}
+
+
+.borderPrimary{
+  border: 1px solid #52026f;
+}
+.secondaryBackground{
+  background-color: #eeeeef;
+}
+
+.boxShadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.headerCategory{
+  height:35vh; 
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9) ), url('../img/productsImage.jpg');
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;   
+
+}
+
+.headerProducts{
+  height:35vh; 
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9) ), url('../img/productsImage2.jpeg');
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;   
+
 }

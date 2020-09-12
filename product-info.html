@@ -28,10 +28,8 @@
     object-fit: cover;
     height: 360px;
   }
+  
 
-  .boxShadow{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
   </style>
 
   <!-- NAVBAR -->
@@ -60,92 +58,148 @@
         <div class="d-flex align-items-center">
          <!--- <i class="fas fa-user mr-1"></i>-->     
           <div class="dropdown">
-            <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold" type="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Aldo Fermin
+            <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold primaryBackground p-2 px-1 text-white" type="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             </button>
             <div class="dropdown-menu" aria-labelledby="profile">
               <a class="dropdown-item" href="cart.html">Mi perfil</a>
               <a class="dropdown-item" href="cart.html">Mi carrito</a>
-              <a class="dropdown-item" href="#">Cerrar Sesión</a><!-- EN CONSTRUCCION-->
+              <a class="dropdown-item" onclick="logout()" href="#">Cerrar Sesión</a>
             </div>
           </div>
         </div>
       </ul>
     </div>
   </nav>   
-  <!-- BREADCRUMB -->
-  <div class="container-fluid " >
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb bg-white" style="font-size: 13px;">
-        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-        <li class="breadcrumb-item"><a href="products.html">Productos</a></li>
-        <li class="breadcrumb-item"><a href="products.html">Autos</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Chevrolet Onix Joy</li>
-      </ol>
-    </nav>
+
+
+  <div class="container">
+
+    
   </div>
 
-  <div class="container mb-4">
-    <div class="row ">
+
+  <div class="container mb-4 mt-3">
+    <div class="row border">
       <!--CENTRAL IMG CONTAINER -->
-      <div class="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center bg-dark align-items-center p-0">
+      <div class="col-sm-12 col-md-12 col-lg-7 d-flex flex-column justify-content-center align-items-center p-0">
         <div class="d-flex justify-content-center align-items-center">
           <img id="centralImage" src="" class="w-100" alt="Responsive image">
         </div>    
-        <!-- <div class="row" >
+      <!-- IMG THUMBNAILS -->
+        <div class="row m-0 m-1" >
           <div class="col-12 text-white d-flex align-items-center "    id="previewImageContainer" ></div>
         </div>
-     -->
       </div>
 
-
       <!-- DESCRIPTION CONTAINER -->
-      <!-- <div class="col-sm-12 col-md-12 col-lg-6 p-4 d-flex align-items-center boxShadow p-4">
-        <div>
-          <div class="d-flex justify-content-between"> 
-            <h3>CHEVROLET ONIX JOY</h3>
-            <h5>13500 USD</h5>
+
+        <div class="col-sm-12 col-md-12 col-lg-5 border">
+          <div class="container p-0 " style="padding-left: 0rem;">
+            <nav class="breadcrumb bg-light">
+              <a class="breadcrumb-item" href="#">Inicio</a>
+              <a class="breadcrumb-item" href="#">Productos</a>
+              <a class="breadcrumb-item" href="#">Autos</a>
+              <span class="breadcrumb-item active">Chevrolet Onix Joy</span>
+            </nav>
           </div>
-          
-          <div class="d-flex mt-2" id="descriptionDiv">
-            <p><b>Descripción breve: </b> Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.</p>
-          </div>    
-          <div class="d-flex justify-content-between mt-2">
-            <small class="font-weight-light ">Categoría: Autos</small >
-            <small class="font-weight-light">Productos vendidos: 5200</small >
-          </div>
-        </div> -->
-        <div class="col-sm-12 col-md-12 col-lg-6 p-4 d-flex align-items-center boxShadow p-4">
           <div>
-            <div class="d-flex justify-content-between"> 
-              <h3 id="productNameInfo"></h3>
-              <h5 id="productPriceInfo"></h5>
+            <div class="d-flex justify-content-between align-items-center"> 
+              <h3 class="primaryTextColor font-weight-bold"  id="productNameInfo"></h3>          
             </div>
-            
+            <hr>
+            <h5 class="text-muted font-weight-bold" id="productPriceInfo"></h5>
+
             <div class="d-flex mt-2" id="productDescriptionInfo">
-           </div>    
+            </div>    
+            <button type="button" class="btn primaryBackground text-white rounded-0">Comprar</button>
             <div class="d-flex justify-content-between mt-2">
               <small class="font-weight-light " id="productCategoryInfo"></small >
               <small class="font-weight-light" id="productSoldCountInfo"></small >
             </div>
+            
           </div>
 
 
       </div>
     </div>
+  </div>
 
-    <!-- IMAGE THUMBNAILS-->
-    <div class="row " >
-      <div class="col-12 text-white d-flex align-items-center p-1 bg-dark "    id="previewImageContainer" ></div>
+
+</div>
+  <!-- RELATED PRODUCTS -->
+  <div class="container mt-2 border">
+    <h5 class="mx-0" style="border-bottom: solid 1px black;">Productos Relacionados</h5>
+  </div>
+  <div class="container border">
+    <div class="row"  id="relatedProductsContainer"></div>
+  </div>
+
+  <div class="album py-5 ">
+    <div class="container ">
+      <div class="row ">
+        <div class="col-md-4  p-4  ">
+          <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground  h-100">
+            <img class="bd-placeholder-img card-img-top"  src="img/prod3.jpg">
+            <h3 class="m-3 font-weight-bold">Fiat Way</h3>
+            <div class="card-body px-3 py-0">
+              <p class="card-text">La versión de Fiat que brinda confort y a un precio accesible.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4  p-4 ">
+            <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground h-100 ">
+              <img class="bd-placeholder-img card-img-top" src="img/prod4.jpg">
+              <h3 class="m-3 font-weight-bold">Peugeot 208</h3>
+              <div class="card-body  px-3 py-0">
+                <p class="card-text">El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.</p>
+              </div>
+            </a>
+        </div>
+      </div>
+      <div class="row">
+          <a type="button" class="btn btn-dark mx-4  btn-lg btn-block" href="categories.html">Ver todas</a>
+      </div>
     </div>
   </div>
 
+  
   <!-- REVIEWS -->
-  <div class="container mt-2">
-    <h2 class="mx-4">Valoraciones</h2>
+  <div class="container mt-2 border">
+        <h5 class="mx-0" style="border-bottom: solid 1px black;">Valoraciones</h5>
+    <hr>
   </div>
-  <div class="container" id="reviewContainer">
+
+
+
+
+
+  
+  <div class="container border" id="reviewContainer">
   </div>
+  <!-- AGREGAR COMMENT-->
+  <div class="container border secondaryBackground">
+    <p class="font-weight-bold" id="userName"></p>
+    <p>Agregá tu puntuación sobre el producto</p>
+    <form>
+      <div class="form-group">
+        <label for="selectRating">Puntuación</label>
+        <select class="form-control" id="selectRating">
+          <option  selected>5</option>
+          <option >4</option>
+          <option >3</option>
+          <option >2</option>
+          <option >1</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="textareaComment">Comentario</label>
+        <textarea class="form-control" id="textareaComment" rows="3"></textarea>
+      </div>
+      <button type="button" id="submitComment" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+  
   <!-- FOOTER -->
   <footer class="text-muted mt-2">
     <div class="container">

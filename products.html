@@ -45,25 +45,29 @@
           <div class="d-flex align-items-center">
             <!--<i class="fas fa-user"></i>-->     
             <div class="dropdown">
-              <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold" type="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Aldo Fermin
+              <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold primaryBackground p-2 px-1 text-white" type="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               </button>
               <div class="dropdown-menu" aria-labelledby="profile">
+                <a class="dropdown-item" href="cart.html">Mi perfil</a>
                 <a class="dropdown-item" href="cart.html">Mi carrito</a>
-                <a class="dropdown-item" href="#">Cerrar Sesión</a><!-- EN CONSTRUCCION-->
+                <a class="dropdown-item" onclick="logout()" href="#">Cerrar Sesión</a>
               </div>
             </div>
           </div>
         </ul>
       </div>
     </nav>  
-
+    <!-- <div class="container-fluid headers">
+    </div> -->
     <!-- HEADING -->
-    <div class="container">
-      <div class="text-center p-4">
+    <div class="container headerProducts d-flex align-items-center justify-content-center mb-2">
+      <div class="text-center p-4 text-white">
         <h2>Productos</h2>
-        <p class="lead">Verás aquí todas los productos del sitio.</p>
+        <p class="lead">Verás aquí todos los productos del sitio.</p>
       </div>
+    </div>
+    <div class="container">
+
 
 
 
@@ -92,7 +96,7 @@
       </div>
       
       <!-- PRODUCT LIST -->
-      <div class="row" id="prod-list-container"></div>
+      <div class="row " id="prod-list-container"></div>
   
   
   

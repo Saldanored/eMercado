@@ -13,7 +13,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/login.css">
-
+    <link rel="stylesheet" href="css/styles.css">
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
     <div class="row align-items-center  bg-light border border-rounded">
 
       <!-- COVER PAGE -->
-      <div class="container col-sm-6 bg-light justify-content-center p-5 border-dark">
+      <div class="container col-sm-12 col-md-6 col-lg-6 bg-light justify-content-center p-5 border-dark">
         <img class="img-fluid mx-auto d-block" style="max-width: 300px;" src="img/undraw_shopping_app_flsj.svg" alt="">
         <h2 class="text-center mt-3 font-weight-bold">E-mercado</h2>
         <h5 class="text-center text-muted font-weight-light">Todo lo que busques está aquí</h5>
@@ -43,7 +43,7 @@
       </div>
 
       <!-- LOGIN PAGE -->
-      <div class="container col-sm-6 bg-light border-left border-secondary p-2">
+      <div class="container col-sm-12 col-md-6 col-lg-6 bg-light border-left border-secondary p-2">
         <div class="d-flex justify-content-center">
           <form action="index.html" id="loginForm" onsubmit="fakeLogin()" class="p-2 rounded">
             <div class="form-group">
@@ -66,14 +66,14 @@
               <small id="passHelp" class="form-text text-muted">Longitud de contraseña: 8 caracteres mínimo.</small>
             </div>
             <button id="loginButton" type="submit" onclick="checkValidationErrors()"
-              class="btn btn-primary justify-self-center w-100">Iniciar sesión</button>
-            <p class="text-center mb-0">o</p>
+              class="btn btn-primary primaryBackground justify-self-center w-100">Iniciar sesión</button>
+            <!-- <p class="text-center mb-0">o</p> -->
           </form>
         </div>
-        <div class="container d-flex justify-content-center  align-items-center mt-0">
+        <!-- <div class="container d-flex justify-content-center  align-items-center mt-0">
           <div id="googleQauth" class="g-signin2 mb-3" data-width="340px" data-theme="dark" data-onsuccess="onSignIn">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

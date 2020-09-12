@@ -15,127 +15,127 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <script src="js/index.js"></script>
  <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">-->
   </head>
   <body>
-
-      <nav class="px-5 navbar navbar-expand-lg bg-light navbar-light sticky-top">
-        <a class="navbar-link text-dark font-weight-bold" href="#">e-Mercado</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mr-auto">
-  
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link primary-color font-weight-bold" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="categories.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sell.html">Vender</a>
-            </li>
-            <div class="d-flex align-items-center">
-             <!--- <i class="fas fa-user mr-1"></i>-->     
-              <div class="dropdown">
-                <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold" type="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Aldo Fermin
-                </button>
-                <div class="dropdown-menu" aria-labelledby="profile">
-                  <a class="dropdown-item" href="cart.html">Mi perfil</a>
-                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
-                  <a class="dropdown-item" href="#">Cerrar Sesión</a><!-- EN CONSTRUCCION-->
-                </div>
+    <!-- NAVBAR -->
+    <nav class="px-5 navbar navbar-expand-lg bg-light navbar-light sticky-top">
+      <a class="navbar-link text-dark font-weight-bold" href="#">e-Mercado</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link primary-color font-weight-bold" href="index.html">Inicio <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <div class="d-flex align-items-center">
+            <!--- <i class="fas fa-user mr-1"></i>-->
+            <div class="dropdown">
+              <button class="btn  dropdown-toggle ml-0 pl-0 font-weight-bold primaryBackground p-2 px-1 text-white" type="button" id="profile"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="profile">
+                <a class="dropdown-item" href="cart.html">Mi perfil</a>
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" onclick="logout()" href="#">Cerrar Sesión</a>
               </div>
             </div>
-          </ul>
-        </div>
-      </nav>   
+          </div>
+        </ul>
+      </div>
+    </nav>
 
-      <div style="min-height: 82vh; background-color: #eeeeef;"  class="container-fluid d-flex justify-content-center">
+      <div style="min-height: 82vh;"  class="container-fluid d-flex justify-content-center secondaryBackground">
         <img src="img/login.png" class="img-fluid" style="margin:auto 0;" alt="">
       </div>
 
-      <div style="min-height: 10vh; background-color: #52026f;" class="container-fluid text-light text-center d-flex align-items-center justify-content-center">
+      <div style="min-height: 10vh" class="container-fluid text-light text-center d-flex align-items-center justify-content-center primaryBackground">
         <h5 class="display-5 font-weight-light">Te lo traemos en un clic | Forma segura de comprar | Vendé más rápido</h5>
       </div>
 
 
 
-    <main role="main">  
-      <!--
+    <main role="main" class="container-fluid ">  
+<!--       
       <section class="jumbotron text-center" style="height: 60vh;">
         <div class="m-5">
           <h1></h1>
-        </div>-->
-      </section>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+        </div>
+      </section> -->
+      <div class="album py-5 ">
+        <div class="container ">
+          <div class="row ">
+            <div class="col-md-4  p-4  ">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground  h-100">
                 <img class="bd-placeholder-img card-img-top"  src="img/cat1.jpg">
-                <h3 class="m-3">Autos (122)</h3>
-                <div class="card-body">
+                <h3 class="m-3 font-weight-bold">Autos (122)</h3>
+                <div class="card-body px-3 py-0">
                   <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
                 </div>
               </a>
             </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <div class="col-md-4  p-4 ">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground h-100 ">
                   <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
-                  <h3 class="m-3">Juguetes (354)</h3>
-                  <div class="card-body">
+                  <h3 class="m-3 font-weight-bold">Juguetes (354)</h3>
+                  <div class="card-body  px-3 py-0">
                     <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
                   </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <div class="col-md-4  p-4 ">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground h-100 ">
                   <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
-                  <h3 class="m-3">Muebles (157)</h3>
-                  <div class="card-body">
+                  <h3 class="m-3 font-weight-bold">Muebles (157)</h3>
+                  <div class="card-body px-3 py-0">
                     <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
                   </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <div class="col-md-4  p-4  ">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground h-100 ">
                   <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
-                  <h3 class="m-3">Herramientas (452)</h3>
-                  <div class="card-body">
+                  <h3 class="m-3 font-weight-bold">Herramientas (452)</h3>
+                  <div class="card-body px-3 py-0">
                     <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
                   </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <div class="col-md-4  p-4 ">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground h-100 ">
                   <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
-                  <h3 class="m-3">Computadoras (724)</h3>
-                  <div class="card-body">
+                  <h3 class="m-3 font-weight-bold">Computadoras (724)</h3>
+                  <div class="card-body px-3 py-0">
                     <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
                   </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <div class="col-md-4  p-4 ">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card secondaryBackground h-100 ">
                   <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
-                  <h3 class="m-3">Vestimenta (841)</h3>
-                  <div class="card-body">
+                  <h3 class="m-3 font-weight-bold">Vestimenta (841)</h3>
+                  <div class="card-body px-3 py-0">
                     <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
                   </div>
                 </a>
             </div>
           </div>
           <div class="row">
-              <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas</a>
+              <a type="button" class="btn btn-dark mx-4  btn-lg btn-block" href="categories.html">Ver todas</a>
           </div>
         </div>
       </div>

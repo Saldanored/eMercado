@@ -50,7 +50,7 @@ function onSignIn(googleUser) {
   console.log('Family Name: ' + profile.getFamilyName());
   console.log("Image URL: " + profile.getImageUrl());
   console.log("Email: " + profile.getEmail());
-  localStorage.setItem('nombreUsuario', profile.getName());
+  localStorage.setItem('nombreUsuario', profile.getGivenName());
   localStorage.setItem('key', 'accessoPermitido'); 
   window.location.href="index.html";
   // The ID token you need to pass to your backend:
